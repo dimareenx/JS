@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loboda-1-27.11.2022-JS</title>
+
+	<script>
+	function arr7() {
+		let auto1=[], auto2=["Acura","Alfa Romeo","Aston Martin","Audi","Bentley","BMW","Bugatti","Chrysler","Ferrari","FIAT"];
+		for (let i=0;i<=9;i++)
+			{	auto1[i]=parseInt(prompt('Вкажіть ціну для '+auto2[i]))}
+		max=auto1[0]; nmax=0;
+		for (let j=0; j<=9; j++)
+			{if (auto1[j]>max) {max=auto1[j]; nmax=j;}}
+
+		document.write('Ціни авто = '+ auto1+'</br></br>');
+		document.write('Найдорожче авто під   №'+ nmax+' - ' + auto2[nmax]+'</br>');
+		document.write('Його ціна = '+ auto1[nmax]+'</br></br>');
+		
+		
+      	}
+	</script>
+</head>
+
+<body>
+	
+	<br><br>
+	7. В массиве хранится информация о стоимости 10 марок автомобилей. Определить сумму наиболее дорогого автомобиля и узнать его номер.
+	<br><input type="button" value="zadacha_7" onclick="arr7()">
+</body>
+</html>

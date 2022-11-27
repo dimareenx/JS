@@ -115,6 +115,21 @@
 			{if(масив[j]==0) {масив[j]=-1;}}
       	document.write('измененный масив = '+ масив);
       	}
+
+    function arr7() {
+		let auto1=[], auto2=["Acura","Alfa Romeo","Aston Martin","Audi","Bentley","BMW","Bugatti","Chrysler","Ferrari","FIAT"];
+		for (let i=0;i<=9;i++)
+			{	auto1[i]=parseInt(prompt('Вкажіть ціну для '+auto2[i]))}
+		max=auto1[0]; nmax=0;
+		for (let j=0; j<=9; j++)
+			{if (auto1[j]>max) {max=auto1[j]; nmax=j;}}
+
+		document.write('Ціни авто = '+ auto1+'</br></br>');
+		document.write('Найдорожче авто під   №'+ nmax+' - ' + auto2[nmax]+'</br>');
+		document.write('Його ціна = '+ auto1[nmax]+'</br></br>');
+		
+		
+      	}
 	</script>
 </head>
 
@@ -145,5 +160,9 @@
 	<br><br>
 	6. Дан массив из 10 чисел, все нули в данном массиву заменить значением -1.
 	<br><input type="button" value="zadacha_6" onclick="arr6()">
+
+	<br><br>
+	7. В массиве хранится информация о стоимости 10 марок автомобилей. Определить сумму наиболее дорогого автомобиля и узнать его номер.
+	<br><input type="button" value="zadacha_7" onclick="arr7()">
 </body>
 </html>

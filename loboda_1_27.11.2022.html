@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loboda-1-27.11.2022-JS</title>
+
+	<script>
+	function arr1() {
+		let wether=[]
+		for (let i=0; i<=30; i++)
+			{ wether[i]=parseInt((Math.random()*20)-15);}
+
+		document.write('показники температури (випадково) = '+ wether+ ',</br></br>');
+
+		let sum=0; 
+		let aver=0;
+		for (let g=0; g<=30; g++) {sum=sum	+wether	[g];}
+		aver=Math.round( sum/31);
+		document.write('а) середня температура = '+aver+'</br></br>');
+
+		document.write('б) сколько раз температура воздуха опускалась ниже 0 градусов = ');
+		let k=0;
+		for (let j=0; j<=30; j++)
+			{ if (wether[j]<=0) {k++};}
+		document.write(k);
+	}
+
+	function arr2() {
+		let сторони=[],p=0;
+		for (let i=1; i<=5; i++)
+			{сторони[i-1]=parseInt(prompt('Вкажіть довжину ' + i +' сторони')); p=p+сторони[i-1];}
+		document.write('периметр пятинкутника = '+p);
+	}
+
+	function arr3() {
+		let прямий=[],зворотній=[],k=0;
+		for (let i=0; i<=5; i++)
+			{прямий[i]=parseInt(Math.random()*100);}
+
+		for	(let j=5;j>=0; j--) {
+			зворотній[j]=прямий[k];
+			k++;
+		}
+		document.write('прямий масив = '+ прямий+'</br></br>' );
+		document.write('зворотній масив = '+ зворотній);
+		
+	}
+
+	function arr4() {
+		let масив=[];
+		for (let i=0; i<=9; i++)
+			{масив	[i]=parseInt(Math.random()*10);}
+
+			
+		document.write('масив = '+ масив+'</br></br>' );
+		
+		document.write('повторяются 2 и более раз = ');
+		for (let j = 0; j <= 9; j++)
+			{for (let g = 1; g <= 9; g++)
+    				{if(масив[j]==масив[g] && j!=g)
+      					{document.write(масив[j]+' ');
+      					  break;}
+      				} 
+      		}
+      	}
+
+    function arr5() {
+		let kv=[];
+		for (let i=0; i<=39; i++)
+			{kv	[i]=parseInt((Math.random()*6)+1);}
+
+		document.write('масив = '+ kv+'</br></br>' );
+		let k=parseInt(prompt('Вкажіть номер квартири від 1 до 40'));
+		if(k>=1 && k<=40) 
+			{document.write('a) вибраний номер квартири - №'+k +'</br></br>' );
+			document.write('в обраній квартирі проживає - '+kv[k]+' людей</br>' );
+			document.write('в квартирі №'+[k-1]+' проживає - '+kv[k-1] +' людей </br>' );
+			document.write('в квартирі №'+[k+1]+' проживає - '+kv[k+1] +' людей </br></br></br>' );}
+		
+		let sum1=0, sum2=0, sum3=0, sum4=0, sum=0;
+
+		for (let i=0; i<=9;i++) {sum1=sum1+kv[i];}
+    	document.write('б) сумарное количество жильцов </br>подъезда №1 = '+sum1+'</br>' );
+
+    	for (let i=10; i<=19;i++) {sum2=sum2+kv[i];}
+    	document.write('подъезда №2 = '+sum2+'</br>' );
+
+    	for (let i=20; i<=29;i++) {sum3=sum3+kv[i];}
+    	document.write('подъезда №3 = '+sum3+'</br>' );
+
+    	for (let i=30; i<=39;i++) {sum4=sum4+kv[i];}
+    	document.write('подъезда №4 = '+sum4+'</br></br>' );
+
+    	for (let i=0; i<=39;i++) {sum=sum+kv[i];}
+    	document.write('Всего в доме = '+sum+' жильцов</br></br>' );
+
+    	document.write('в) многодетные семьи живут в квартирах № '); 
+    	for (let i=0; i<=39; i++) 
+    		{if(kv[i]>=5) {document.write( i + ', '); }; };
+    	
+
+    }
+
+    function arr6() {
+		let масив=[];
+		for (let i=0; i<=9; i++)
+			{масив	[i]=parseInt(Math.random()*5);}
+
+			
+		document.write('масив = '+ масив+'</br></br>' );
+		
+		
+		for (let j = 0; j <= 9; j++)
+			{if(масив[j]==0) {масив[j]=-1;}}
+      	document.write('измененный масив = '+ масив);
+      	}
+	</script>
+</head>
+
+<body>
+	<br><br>
+	1.Дана температура воздуха за каждый день января. <br>Определить: 
+	<br>а) среднюю температуру за месяц; <br>
+	б) сколько раз температура воздуха опускалась ниже указанной метки;
+	<br><input type="button" value="zadacha_1" onclick="arr1()">
+
+	<br><br>
+	2. Пользователь вводит длину сторон пятиугольника, каждая сторона заноситься в массив, необходимо вычислить периметр пятиугольника (периметр — сумма всех сторон).
+	<br><input type="button" value="zadacha_2" onclick="arr2()">
+
+	<br><br>
+	3. Написать программу, которая выводит одномерный массив в обратном порядке.
+	<br><input type="button" value="zadacha_3" onclick="arr3()">
+
+	<br><br>
+	4. Написать программу, которая находит в массиве значения, повторяющиеся два и более раз, и показывает их на экран.
+	<br><input type="button" value="zadacha_4" onclick="arr4()">
+
+	<br><br>
+	5. В массиве хранится информация о количестве жильцов каждой квартиры пятиэтажного дома (4 подъезда, на каждом этаже по 2 квартиры). <br>а) по выбранному номеру квартиры определить количество жильцов, а также их соседей проживающих на одном этаже;<br>б) определить суммарное количество жильцов для каждого подъезда; <br>в) определить номера квартир, где живут многодетные семьи (условно будем считать таковыми, у которых количество членов семьи превышает пять человек).
+	<br><input type="button" value="zadacha_5" onclick="arr5()">
+
+	
+	<br><br>
+	6. Дан массив из 10 чисел, все нули в данном массиву заменить значением -1.
+	<br><input type="button" value="zadacha_6" onclick="arr6()">
+</body>
+</html>
